@@ -1,0 +1,27 @@
+{
+  "name": "dog-api-e2e2-taf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf allure-results && rimraf allure-report",
+    "allure:generate": "allure generate ./allure-results --clean",
+    "allure:open": "allure open ./allure-report",
+    "allure": "npm run allure:generate && npm run allure:open",
+    "test": "npm run clean && npx playwright test --project='Dog API'",
+    "test:with allure report": "npm run test && npm run allure",
+    "playwright:install": "npx playwright install"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.0.3",
+    "@playwright/test": "^1.48.1",
+    "@types/lodash": "^4.17.12",
+    "@types/node": "^22.7.7",
+    "allure-commandline": "^2.30.0",
+    "allure-playwright": "^3.0.5",
+    "dotenv": "^16.4.5",
+    "lodash": "^4.17.21",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.3"
+  }
+}
